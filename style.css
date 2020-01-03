@@ -117,3 +117,21 @@ span.filterName {
     margin-right: 5px;
     height: 100%;
 }
+.sortWrapper {
+    display: flex;
+}
+select.sortSelect {
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+}
+.dropDownIcon, .dropUpIcon {
+    cursor: pointer;
+}
+.sorttwo {
+    /* width: 50%; */
+    display: flex;
+}
+.sortone {
+    margin-right: 10px;
+}

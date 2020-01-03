@@ -1,4 +1,4 @@
-const appInitalState = { data: [], loading: false, filter: [], searchTerm: "", sortBy: "id"};
+const appInitalState = { data: [], loading: false, filter: [], searchTerm: "", sortBy: "name", sort: "asc"};
 
 const filterObj = (state = appInitalState.filter, action) => {
   switch (action.type){
@@ -50,6 +50,8 @@ export default function appReducer(state = appInitalState, action) {
       return { ...state, sortBy: action.sortBy };
     case "FILTER":
       return { ...state, filter: filterObj(state.filter, action)}
+    case "SORT":
+      return {...state, sort: action.sort}
     default:
       return state;
   }
