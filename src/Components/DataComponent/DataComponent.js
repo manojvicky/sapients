@@ -36,7 +36,9 @@ const DataComponent = ({data, sortBy, sort}) => {
   }else{
     data=data.sort((a,b)=>handleSort(a,b,sortBy)).reverse()
   }
-  console.log('props data', sortBy, sort);
+    if(data.length===0){
+      return<div className="noData"> NO data</div>
+    }
     return (
       <div style={{border:"1px solid", height:"100%", padding: "15px"}} >
         <FilterList/>
