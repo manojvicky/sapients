@@ -10,3 +10,5 @@ or
 yarn install
 <br>
 yarn start
+<br>
+Used React for UI and Redux for state management
