@@ -11,6 +11,9 @@ export default function appReducer(state = appInitalState, action) {
       return { ...state, searchTerm: action.searchTerm };
     case "SORTBY":
       return { ...state, sortBy: action.sortBy };
+    case "FILTER":
+      if(action.action==='PUSH') return {...state, filter: [...state.filter, action.filter] };
+      if(action.action==='POP') return {...state, filter: state.filter.filter(item!==action.filter) };
     default:
       return state;
   }

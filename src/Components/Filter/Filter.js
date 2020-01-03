@@ -1,5 +1,5 @@
 import React from "react";
-import CheckBox from "./CheckBox";
+import CheckBox from "./checkbox.container";
 const Filter = ({data}) => {
     const gender = [...new Set(data.map(item=>item.gender))].map(item=> {return {value: item, filterName: 'gender', selected: false}});
     const species = [...new Set(data.map(item=>item.species))].map(item=> {return {value: item, filterName: 'species', selected: false}});
