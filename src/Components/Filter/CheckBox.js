@@ -1,12 +1,27 @@
 import React from 'react';
 
-const Checkbox = ({data, action}) =>{
-    console.log('props', data, action);
-    const checkbox = data.length>0 ? data.map((item)=>{
+const Checkbox = ({data, action, filters}) =>{
+    const defaultdata = data.map(item=>{
+        return {...item, checked: false}
+    });
+    const newData = [];
+    defaultdata.forEach(item=>{
+        filters.forEach(val=>{
+            if(val.filterName===item.filterName){
+                val.value.forEach(item2=>{
+                    if(item2===item.value){
+                        item.checked = true;
+                    }
+                })
+            }
+        });
+        newData.push(item);
+    });
+    const checkbox = newData.length>0 ? newData.map((item)=>{
         return(
             <div className="checkboxEach" key={`${item.value}${item.filterName}`}>
                 <label htmlFor={item.value} className="checkboxLabel">{item.value}</label>
-                <input id={item.value} type="checkbox" className="checkboxInput" value={item.value} name={item.value} onChange={(e)=>{console.log(e.target.checked, item); action(e.target.checked ? "PUSH" : "POP", item);}}/>
+                <input id={item.value} type="checkbox" className="checkboxInput" value={item.value} name={item.value} checked={item.checked} onChange={(e)=>{action(e.target.checked ? "PUSH" : "POP", item);}}/>
             </div>
         );
     }): null;

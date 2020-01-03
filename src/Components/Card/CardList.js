@@ -9,7 +9,7 @@ return(
         {
             data.length ? data.map(character=>{
                 return(
-                  <Col xs={10} sm={6} md={4} lg={3} xl={3} key={character.id}>
+                  <Col xs={10} sm={6} md={4} lg={3} xl={3} key={`${character.id}-${character.name}`}>
                     <Card data={character} />
                   </Col>
                 );

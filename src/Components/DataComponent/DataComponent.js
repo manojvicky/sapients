@@ -2,7 +2,7 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CardList from '../Card/CardList';
-import FilterList from "../FilterList/FilterList";
+import FilterList from "../FilterList/FilterList.container";
 import Sort from "../Sort/Sort";
 import SearchBox from "../SearchBox/SearchBox.container";
 const DataComponent = ({data}) => {
